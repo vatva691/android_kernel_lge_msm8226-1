@@ -10,6 +10,21 @@
  * GNU General Public License for more details.
  */
 
-/ {
+&i2c_2 {
+        bma2x2@11 {
+                compatible = "bosch,bma2x2";
+                reg = <0x11>;
+                vdd-supply = <&pm8226_l19>;
+                gpios = <&msmgpio 69 0>; /* IRQ */
+                bma,place = <7>;
+        };
 
+        bmm050@13 {
+                compatible = "bosch,bmm050";
+                reg = <0x13>;
+                vdd-supply = <&pm8226_l19>;
+                gpios = <&msmgpio 66 0>; /* IRQ */
+                bmm,place = <4>;
+        };
 };
+
