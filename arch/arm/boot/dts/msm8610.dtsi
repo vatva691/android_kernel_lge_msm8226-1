@@ -488,7 +488,13 @@
 			<         0 0>,
 			< 384000000 1>,
 			< 787200000 2>,
-			<1094400000 3>;
+			< 998400000 5>,
+			<1094400000 6>,
+			<1190400000 7>,
+			<1305600000 8>,
+			<1401600000 9>;
+
+;
 
 		cpu-vdd-supply = <&apc_vreg_corner>;
 	};
@@ -499,11 +505,13 @@
 		qcom,bw-tbl =
 			<  762 /* 100 MHz */ >,
 			< 1525 /* 200 MHz */ >,
-			< 2540 /* 333 MHz */ >;
+			< 2540 /* 333 MHz */ >,
+			< 2828 /* 353 MHz */ >,
+			< 3003 /* 374 MHz */ >;
 	};
 
 	qcom,msm-cpufreq@0 {
-		reg = <0 4>;
+		reg = <0 5>;
 		compatible = "qcom,msm-cpufreq";
 		qcom,cpufreq-table =
 			<  300000  762 >,
@@ -512,7 +520,10 @@
 			<  787200 1525 >,
 			<  998400 2540 >,
 			< 1094400 2540 >,
-			< 1190400 2540 >;
+			< 1190400 3003 >,
+			< 1305600 3003 >,
+			< 1401600 3003 >;
+			
 	};
 
 	spmi_bus: qcom,spmi@fc4c0000 {
@@ -587,8 +598,8 @@
 		interrupts = <0 96 0>;
 		qcom,i2c-bus-freq = <100000>;
 		qcom,i2c-src-freq = <19200000>;
-		qcom,sda-gpio = <&msmgpio 8 0>;
-		qcom,scl-gpio = <&msmgpio 9 0>;
+		qcom,sda-gpio = <&msmgpio 10 0>;
+		qcom,scl-gpio = <&msmgpio 11 0>;
 		qcom,master-id = <86>;
 	};
 
